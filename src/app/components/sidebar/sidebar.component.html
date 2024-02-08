@@ -1,0 +1,103 @@
+
+
+    <div class=" col-auto  shadow p-2 bg-body rounded">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item">
+            <a routerLink="home" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Home</span>
+            </a>
+          </li>
+          <li>
+<!--          <li *ngIf="authenticationService.isAdmin()">-->
+            <a href="#umanag" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+              <i class="fs-4 bi-robot"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Users</span></a>
+            <ul class="collapse nav flex-column ms-1" id="umanag" data-bs-parent="#menu">
+              <li class="w-100">
+                <a routerLink="users" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">Users list</span></a>
+              </li>
+              <li>
+                <a routerLink="new-user" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">New User</span></a>
+              </li>
+              <li>
+                <a routerLink="new-role" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">New Role</span></a>
+              </li>
+            </ul>
+          </li>
+          <hr>
+          <li>
+            <a href="#Customers" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Bank Customers</span> </a>
+            <ul class="collapse nav flex-column ms-1" id="Customers" data-bs-parent="#menu">
+              <li class="w-100">
+                <a routerLink="customers" class="nav-link px-lg-2"> <span class="d-none d-sm-inline">Bank customers list</span></a>
+              </li>
+              <li>
+                <a routerLink="new-customer" class="nav-link px-lg-2"> <span class="d-none d-sm-inline">New bank customer</span></a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#Accounts" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-bank2"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Bank Accounts</span> </a>
+            <ul class="collapse nav flex-column ms-1 " id="Accounts" data-bs-parent="#menu">
+              <li class="w-100">
+                <a routerLink="bank-accounts" class="nav-link px-lg-2"> <span class="d-none d-sm-inline">Bank accounts list</span></a>
+              </li>
+              <li>
+                <a routerLink="new-account" class="nav-link px-lg-2"> <span class="d-none d-sm-inline">New bank account</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#Operations" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Bank Operations</span> </a>
+            <ul class="collapse nav flex-column ms-1" id="Operations" data-bs-parent="#menu">
+              <li class="w-100">
+                <a routerLink="operations" class="nav-link px-lg-2"> <span class="d-none d-sm-inline">Bank operations list</span></a>
+              </li>
+              <li>
+                <a routerLink="new-operation" class="nav-link px-lg-2"> <span class="d-none d-sm-inline">New bank operation</span></a>
+              </li>
+            </ul>
+          </li>
+          <li>
+<!--          <li *ngIf="authenticationService.isAdmin()">-->
+            <a href="#Cards" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+              <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Bank Cards</span></a>
+            <ul class="collapse nav flex-column ms-1" id="Cards" data-bs-parent="#menu">
+              <li class="w-100">
+                <a routerLink="home" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">Bank cards list</span></a>
+              </li>
+              <li>
+                <a routerLink="home" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">Item</span></a>
+              </li>
+            </ul>
+          </li>
+
+          <li >
+<!--          <li *ngIf="authenticationService.isAdmin()">-->
+            <a href="#types" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+              <i class="fs-4 bi-list-task"></i> <span class="ms-1 d-none d-sm-inline fw-bold">Bank account types</span></a>
+            <ul class="collapse nav flex-column ms-1" id="types" data-bs-parent="#menu">
+              <li class="w-100">
+                <a routerLink="home" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">Account types list</span></a>
+              </li>
+              <li>
+                <a routerLink="home" class="nav-link px-lg-3"> <span class="d-none d-sm-inline">New type</span></a>
+              </li>
+            </ul>
+          </li>
+          <hr class="bi-hr">
+          <li class="nav-item mt-5">
+            <a  routerLink="login" class="nav-link align-middle px-0">
+              <i class="fa fa-sign-out"></i> <span class="ms-1 d-none d-sm-inline fw-bold">logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
