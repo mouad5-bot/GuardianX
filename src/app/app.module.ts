@@ -15,15 +15,15 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {MatSelectModule} from "@angular/material/select";
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
-import { AuthComponent } from './pages/auth/auth.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AuthComponent,
     LoginComponent,
     RegisterComponent,
   ],
@@ -41,7 +41,9 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     StoreRouterConnectingModule.forRoot(),
     MatSelectModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
-    SidebarComponent
+    SidebarComponent,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

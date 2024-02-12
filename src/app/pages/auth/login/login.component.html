@@ -9,18 +9,18 @@
       <div class="card border-white bg-white">
 <!--        <div *ngIf=" mode == 1" class="alert alert-danger">Bad credentials !!</div>-->
         <div class="card-body border-white bg-white">
-          <form  >
+          <form [formGroup]="form"  (ngSubmit)="login()">
             <div class="form-group mt-2">
               <label class="control-label  fw-bold" style="color :rgb(163, 163, 168);">Username :</label>
-              <input type="text" name="username" class="form-control" ngModel>
+              <input type="text" name="email" class="form-control" formControlName="email">
             </div>
             <div class="form-group mt-3">
               <label class="control-label fw-bold" style="color :rgb(163, 163, 168);">Password :</label>
-              <input type="password" name="password" class="form-control" ngModel>
+              <input type="password" name="password" class="form-control" formControlName="password">
             </div>
             <div class="row">
               <div class="col-4">
-                <button class=" text-white btn btn-primary text-end mt-5 rounded-pill"  type="submit">Login</button>
+                <button class=" text-white btn btn-primary text-end mt-5 rounded-pill" type="submit">Login</button>
               </div>
               <div class="col-8">
                 <p class="text-end mt-5">You don't have account yet  <a routerLink="/register">Register</a> </p>
