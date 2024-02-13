@@ -19,6 +19,9 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { ContentComponent } from './components/content/content.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    ContentComponent,
+    DashboardComponent,
+    PageNotFoundComponentComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,22 +9,22 @@
       <div class="card border-white bg-white">
         <!--        <div *ngIf=" mode == 1" class="alert alert-danger">Bad credentials !!</div>-->
         <div class="card-body border-white bg-white">
-          <form  >
+          <form [formGroup]="form"  (ngSubmit)="register()" >
             <div class="form-group ">
               <label class="control-label  fw-bold" style="color :rgb(163, 163, 168);">First Name :</label>
-              <input type="text" name="firstname" class="form-control" ngModel>
+              <input type="text" name="firstName" class="form-control" formControlName="firstName" required>
             </div>
             <div class="form-group mt-2">
               <label class="control-label  fw-bold" style="color :rgb(163, 163, 168);">Last Name :</label>
-              <input type="text" name="lastname" class="form-control" ngModel>
+              <input type="text" name="lastName" class="form-control" formControlName="lastName" required>
             </div>
             <div class="form-group mt-2">
               <label class="control-label  fw-bold" style="color :rgb(163, 163, 168);">Email :</label>
-              <input type="text" name="email" class="form-control" ngModel>
+              <input type="email" name="email" class="form-control email" formControlName="email" required>
             </div>
             <div class="form-group mt-2">
               <label class="control-label fw-bold" style="color :rgb(163, 163, 168);">Password :</label>
-              <input type="password" name="password" class="form-control" ngModel>
+              <input type="password" name="password" class="form-control" formControlName="password" required>
             </div>
             <div class="row">
               <div class="col-4">

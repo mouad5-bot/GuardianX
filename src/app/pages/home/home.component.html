@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm d-flex justify-content-between">
   <div class="container">
-  <a class="navbar-brand mt-2" href="#">
+  <a class="navbar-brand mt-2" routerLink="/">
     YOUCODE
   </a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -15,13 +15,18 @@
         </a>
       </li>
       <li class="nav-item me-4">
-        <a class="nav-link" routerLink="/user/list">
+        <a class="nav-link" routerLink="content">
            Users
         </a>
       </li>
       <li class="nav-item me-4">
-        <a class="nav-link" routerLink="/competition/list">
+        <a class="nav-link" routerLink="profile">
            Profile
+        </a>
+      </li>
+      <li class="nav-item me-4">
+        <a class="nav-link" routerLink="dashboard">
+           Dashboard
         </a>
       </li>
     </ul>
@@ -36,15 +41,14 @@
   </div>
   </div>
 </nav>
-<div class=" ">
+<!--<h1 class="d-flex justify-content-center">Home PAge</h1>-->
   <div class="row">
-    <div class="col-3 ">
-      <app-sidebar></app-sidebar>
-    </div>
+<!--    <div class="col-2">-->
+<!--      <app-sidebar></app-sidebar>-->
+<!--    </div>-->
     <div class="col-9 d-flex justify-content-center align-items-center">
       <main role="main" class="col-md-9 mt-2 ml-sm-auto col-lg-10 px-4">
         <router-outlet></router-outlet>
       </main>
     </div>
   </div>
-</div>

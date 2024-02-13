@@ -16,8 +16,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  register(...user: any): Observable<JwtAuthenticationResponse> {
-    return this.http.post<JwtAuthenticationResponse>(this.apiUrl + "/register", {...user} as User);
+  register(firstName: string,lastName: string,email: string, password: string): Observable<JwtAuthenticationResponse> {
+    return this.http.post<JwtAuthenticationResponse>(this.apiUrl + "/register", {firstName ,lastName ,email, password});
   }
 
   login(email: string, password: string): Observable<JwtAuthenticationResponse> {

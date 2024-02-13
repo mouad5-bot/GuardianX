@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
 import {LoginComponent} from "./pages/auth/login/login.component";
 import {RegisterComponent} from "./pages/auth/register/register.component";
+import {ContentComponent} from "./components/content/content.component";
+import {PageNotFoundComponentComponent} from "./components/page-not-found-component/page-not-found-component.component";
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
 const routes: Routes = [
   {
     path:"login",
@@ -15,10 +18,13 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
-    children: []
+    children: [
+      {path:"content", component: ContentComponent},
+      {path:"dashboard", component: DashboardComponent},
+    ]
   },
   {path:"",redirectTo:"/home" ,pathMatch:"full"},
-  {path:"**",redirectTo:"/home" ,pathMatch:"full"}
+  {path:"**", component: PageNotFoundComponentComponent}
 ];
 
 @NgModule({
