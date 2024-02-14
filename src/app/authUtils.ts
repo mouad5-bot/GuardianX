@@ -1,5 +1,6 @@
 import {JwtAuthenticationResponse} from "./core/models/jwt-auth-response";
 import {User} from "./core/models/User";
+import {Login} from "./core/models/login";
 
 class AuthUtils {
 
@@ -12,13 +13,13 @@ class AuthUtils {
    * Logout the user
    */
   logout() {
-    sessionStorage.removeItem('authUser');
-    sessionStorage.clear();
+    localStorage.removeItem('authUser');
+    localStorage.clear();
   }
 
   setLoggedCredentials(user: User, jwtAuthenticationResponse: JwtAuthenticationResponse) {
     if (user)
-      sessionStorage.setItem('authUser', JSON.stringify(user));
+      localStorage.setItem('authUser', JSON.stringify(user));
     if (jwtAuthenticationResponse) {
       this.setAccessToken(jwtAuthenticationResponse.accessToken);
       this.setRefreshToken(jwtAuthenticationResponse.refreshToken);
@@ -26,18 +27,19 @@ class AuthUtils {
   }
 
   setRefreshToken(refreshToken: string) {
-    sessionStorage.setItem('refresh_token', refreshToken);
+    localStorage.setItem('refresh_token', refreshToken);
   }
 
   setAccessToken(accessToken: string) {
-    sessionStorage.setItem('access_token', accessToken);
+    localStorage.setItem('access_token', accessToken);
   }
 
   /**
    * Returns the authenticated user
    */
-  getAuthenticatedUser(): User | null {
-    const authUserString = sessionStorage.getItem('authUser');
+  getAuthenticatedUser(): Login | null {
+    const authUserString = localStorage.getItem('authUser');
+    console.log(authUserString)
     if (!authUserString) {
       return null;
     }
@@ -45,7 +47,7 @@ class AuthUtils {
   }
 
   currentAccessToken() {
-    return sessionStorage.getItem('access_token') ?? null;
+    return localStorage.getItem('access_token') ?? null;
   }
 
   currentUserValue() {

@@ -5,12 +5,14 @@ import {map, Observable} from "rxjs";
 import {JwtAuthenticationResponse} from "../core/models/jwt-auth-response";
 import {User} from "../core/models/User";
 import {authUtils} from "../authUtils";
+import {Login} from "../core/models/login";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isLoggedIn = false;
+  public isLoggedIn = false;
+  redirectUrl: string | undefined;
   private apiUrl: string = environment.apiUrl + "/api/v1/auth";
 
   constructor(private http: HttpClient) { }
@@ -23,8 +25,11 @@ export class AuthService {
     return this.http.post<JwtAuthenticationResponse>(this.apiUrl + "/login", {email, password})
       .pipe(
         map((response: JwtAuthenticationResponse) => {
-            // login successful if there's a jwt token in the response
-            if (response && response.accessToken && response.refreshToken) {
+
+          // login successful if there's a jwt token in the response
+            if (response.accessToken && response.refreshToken) {
+
+              console.log("this is the user in service" );
               // retrieve the user info
               this.me(response.accessToken).subscribe({
                 next: (user: User) => {
@@ -39,11 +44,11 @@ export class AuthService {
   }
 
   me(access_token: string): Observable<User> {
-    this.isLoggedIn = false;
-    return this.http.get<User>(this.apiUrl + "me", {headers: {Authorization: `Bearer ${access_token}`}})
+    return this.http.get<User>(this.apiUrl + "/me", {headers: {Authorization: `Bearer ${access_token}`}})
   }
 
   logout() {
+    this.isLoggedIn = false;
     authUtils.logout();
   }
 }
