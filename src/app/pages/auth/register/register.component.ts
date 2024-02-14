@@ -51,7 +51,6 @@ export class RegisterComponent implements OnInit{
   register() {
     this.submitted = true;
     const val = this.form.value;
-console.log(val.firstName);
     if (this.form.invalid) {
       return;
     } else {
@@ -59,7 +58,7 @@ console.log(val.firstName);
         next: () => {
           this.successmsg = true;
           if (this.successmsg) {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['home/dashboard']);
           }
         },
         error: (error) => {

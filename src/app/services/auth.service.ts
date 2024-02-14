@@ -10,7 +10,6 @@ import {authUtils} from "../authUtils";
   providedIn: 'root'
 })
 export class AuthService {
-
   private isLoggedIn = false;
   private apiUrl: string = environment.apiUrl + "/api/v1/auth";
 
@@ -44,8 +43,7 @@ export class AuthService {
     return this.http.get<User>(this.apiUrl + "me", {headers: {Authorization: `Bearer ${access_token}`}})
   }
 
-  // logout() {
-  //   // logout the user
-  //   authUtils.logout();
-  // }
+  logout() {
+    authUtils.logout();
+  }
 }

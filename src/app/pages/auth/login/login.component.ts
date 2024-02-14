@@ -16,15 +16,14 @@ export class LoginComponent implements OnInit {
               private router: Router) {
     this.form = this.fb.group({
       email: ['mouad@gmail.com', [Validators.required, Validators.email]],
-      password: ['pswd123', [Validators.required]]
+      password: ['mouad123', [Validators.required]]
     });
   }
 
   ngOnInit(): void {
-    // document.body.classList.add('auth-body-bg')
     this.form = this.fb.group({
-      email: ['khalid@gmail.com', [Validators.required, Validators.email]],
-      password: ['password', [Validators.required]],
+      email: ['mouad@gmail.com', [Validators.required, Validators.email]],
+      password: ['mouad123', [Validators.required]],
     });
   }
 
@@ -36,21 +35,10 @@ export class LoginComponent implements OnInit {
         .subscribe(
           () => {
             console.log("User is logged in");
-            this.router.navigateByUrl('/');
+            this.router.navigate(['']);
+            console.log();
           }
         );
     }
   }
 }
-
-
-
-// export interface Tokens {
-//   'access-token': string;
-//   'refresh-token': string;
-// }
-//
-// export interface TokensR {
-//   'accessToken': string;
-//   'refreshToken': string;
-// }
